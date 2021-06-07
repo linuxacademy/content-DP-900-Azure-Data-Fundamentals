@@ -68,11 +68,6 @@ http://unlicense.org/
 	</style>
 	
 	<script type="text/javascript">
-/* 		dictionary objects, each with 25 terms and definitions -- 
-		fill in with "Bingo Free Space 1": "",  "Bingo Free Space 2": "", etc. as necessary to get 25.
-		  ***Be sure to escape quotes in definitions with \" and remove the final comma at the end of the if copy-pasting
-		Alter game button parameters to point to the correct dictionary object
-*/
 		gameA = {
 			"ARM Templates": "\"Infrastructure as code,\" written in JSON to define and configure Azure resources",
 			"Azure CLI": "A command-line language that can be used in a Bash shell to interact with Azure data resources",
