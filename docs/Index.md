@@ -1,11 +1,11 @@
 <!--
-Author: Amy Coughlin, A Cloud Guru, 2021
+Author: Amy Coughlin, Pluralsight, 2025
 This is free and unencumbered software released into the public domain.
 http://unlicense.org/ 
 -->
 <html>
 <head>
-	<title>A Cloud Guru DP-900 Azure Data Fundamentals Bingo</title>
+	<title>Pluralsight DP-900 Azure Data Fundamentals Bingo</title>
 	
 	<style>
 	h2 {color:white;text-align:center;padding:10px;border:1px solid green;}
