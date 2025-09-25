@@ -1,6 +1,6 @@
 <!--
 Author: Amy Coughlin, Pluralsight, 2025
-This is free and unencumbered software released into the public domain.
+This is free and unencumbered software released into the public domain. However, the content of the game is under copyright to Pluralsight LLC.
 http://unlicense.org/ 
 -->
 <html>
