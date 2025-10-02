@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pluralsight DP-900 Azure Data Fundamentals Bingo</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: #ffffff; /* clean white */
+      font-family: 'Roboto', sans-serif;
+      margin: 20px;
+      color: #003366; /* deep blue text */
+    }
+
+    h1 {
+      color: #003366;
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      color: #ffffff;
+      text-align: center;
+      padding: 12px;
+      border-radius: 8px;
+      background-color: #5A80FC; /* light blue */
+    }
+
+    h3 {
+      color: #FC8918; /* orange accent */
+      margin-top: 1.5rem;
+    }
+
+    p {
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    a {
+      color: #5A80FC;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Grid + cells */
+    td {
+      height: 120px;
+      width: 120px;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+    td:hover {
+      background: #f3f7ff;
+      transform: scale(1.02);
+    }
+
+    td label {
+      cursor: pointer;
+    }
+
+    /* States */
+    .selectedOn {
+      background: #00CB85 !important;
+      color: #ffffff;
+      font-weight: 500;
+    }
+    .selectedOff {
+      background: transparent;
+    }
+
+    .noJavascript {
+      background-color: #FF7F7F;
+      color: red;
+      padding: 10px;
+      margin: 20px auto;
+      border: 1px solid red;
+      border-radius: 6px;
+      max-width: 600px;
+    }
+
+    /* Form + buttons */
+    form {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    input[type=button] {
+      background-color: #003366;
+      color: #ffffff;
+      border: none;
+      padding: 10px 18px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+    input[type=button]:hover {
+      background-color: #5A80FC;
+      transform: translateY(-2px);
+    }
+
+    input[type=radio]:checked {
+      outline: 3px solid #FC8918;
+    }
+
+    fieldset {
+      border: 1px solid #00CB85;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 20px;
+      background: #f9fdfb;
+    }
+
+    legend {
+      font-weight: 600;
+      color: #00CB85;
+    }
+
+    /* Layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+      margin-top: 20px;
+    }
+
+    #instructions {
+      display: none;
+      border: 1px solid #00CB85;
+      border-radius: 8px;
+      margin: 15px auto;
+      padding: 20px;
+      background: #f9fdfb;
+      max-width: 800px;
+    }
+  </style>
+
+  <!-- Keep your full JavaScript/game logic as-is -->
+	<script type="text/javascript">
+/* 		dictionary objects, each with 25 terms and definitions -- 
+		fill in with "Bingo Free Space 1": "",  "Bingo Free Space 2": "", etc. as necessary to get 25.
+		  ***Be sure to escape quotes in definitions with \" and remove the final comma at the end of the if copy-pasting
+		Alter game button parameters to point to the correct dictionary object
+*/
+		gameA = {
+			"Avro": "A row-based file format that stores data records with a compact binary encoding alongside a human-readable JSON schema",
+			"Non-Relational": "A data storage resource that stores semi-structured data or non-structured data",
+			"Visualization": "A data technique that translates information into a visual context to make it easier to understand and gain insights",
+			"ORC": "A columnar file format optimized for big data that organizes data into stripes with built-in compression and statistics",
+			"Big Data": "A term that has come to refer to massive amounts of data that is produced in large volumes, at high speed, with a lot of variety in terms of form or content",
+			"Graph": "A type of database made up of nodes and edges, which is particularly well suited to social networking applications and certain scientific applications",
+			"JSON": "A type of semi-structured data in human-readable form and stored on \"documents\"; similar in nature to XML and YAML",
+			"Parquet": "A columnar file format designed for flexibility with nested or hierarchical data, using row groups and metadata to enable efficient storage",
+			"Blob": "A Binary Large Object stored in Azure Blob Storage, typically representing unstructured data such as images, videos, or documents",
+			"Wide-Column": "Also known as column-family, this type of database stores tables with rows, where a different set of columns can be defined for each row",
+			"Unstructured": "Data that has no defined structure, often referred to as \"blobs,\" but may nonetheless include metadata associated with files, such as PDFs, images, and videos",
+			"Semi-Structured": "Data that is flexibly organized around entities that can have varying types and amounts of associated descriptive data and hierarchical data per defined entity",
+			"Structured": "Data that is highly organized with strong rules around the type, form, and format of the stored data. This type of data is very tightly associated with relational databases.",
+			"Data Engineer": "Data wrangling and implementing data-driven artificial intelligence solutions both fall within the many possible specializations undertaken by this data professional",
+			"Data Analyst": "Exploring and analyzing data and building business-friendly data models falls under the responsibility of this data professional",
+			"Azure Data Resource": "A cloud-based service such as Azure SQL Database or Cosmos DB",
+			"SQL": "Many data sources can be queried by some variant of this declarative language.",
+			"Hierarchical data": "Data organized in parent-child structures, often used to represent nested or tree-like relationships",
+			"IoT": "Internet of Things, a network of devices and sensors that collect and exchange data over the internet",
+			"Key-Value": "Semi-structured format, where entities are organized into tables with rows uniquely identified by a key and a flexible number of columns; similar to wide-column data format",
+			"Azure Fabric": "A Microsoft platform that supports modern data warehouse and analytics capabilities",
+			"Database Administrator": "This data professional will often be responsible for setting up database security and encyrption configurations as well as managing and monitoring IaaS infrastructure",
+			"Relational": "Type of database where structured data is organized into tables with rows and columns, where each row is an entity, with pre-defined columns that are the same for every row",
+			"Bingo Free Space 1": "",
+			"Bingo Free Space 2": ""
+		};		
+		gameB = {
+			"Primary Key": "A data construct made up of one or more bits of data that uniquely identify an entity in a data store; examples include a key on a row in a table or a key on a JSON document",
+			"Non-Relational": "A data storage resource that stores semi-structured data or non-structured data",
+			"Schema-on-Read": "A hallmark of semi-structured data, where the desired form of the returned data is determined by the query",
+			"Schema-on-Write": "A hallmark of structured, relational data, where the desired form of the data is determined ahead of time and enforced when the data is written to the data tables",
+			"Partition Key": "A key in certain types of data resources that buckets multiple items, which could be rows or documents, under a particular category or common filter value",
+			"Graph": "A type of database made up of nodes and edges, which is particularly well suited to social networking applications and certain scientific applications",
+			"Column-Family": "A type of database that stores tables with rows, where a different set of columns can be defined for each row; also referred to as a wide-column database",
+			"IaaS": "Acronym that describes the form of Azure service provided by SQL Server on a virtual machine",
+			"Unstructured": "Data that has no defined structure, often referred to as \"blobs,\" but may nonetheless include metadata associated with files, such as PDFs, images, and videos",
+			"Semi-Structured": "Data that is flexibly organized around entities that can have varying types and amounts of associated descriptive data and hierarchical data per defined entity",
+			"Structured": "Data that is highly organized with strong rules around the type, form, and format of the stored data. This type of data is very tightly associated with relational databases.",
+			"Business Intelligence": "Describes the use of computing and data resources to aid the identification, discovery, and analysis of critical business data",
+			"Nodes and Edges": "In graph databases, entities and relationships are also referred to as these 2 terms.",
+			"Row Key": "Key-value data resources can combine this with the partition key to form a primary key, which enables fast retrieval of individual entities in a table",
+			"SQL": "Many data sources can be queried by some variant of this declarative language.",
+			"PaaS": "Most, but not all, Azure data services fall under the _____ service category, where Azure handles most of the administrative tasks of patching, backups, OS updates, and so on.",
+			"Key-Value": "Semi-structured format, where entities are organized into tables with rows uniquely identified by a key and a flexible number of columns; similar to wide-column data format",
+			"Relational": "Type of database where structured data is organized into tables with rows and columns, where each row is an entity, with pre-defined columns that are the same for every row",
+			"Querying": "Writing code or interacting with a UI to \"read\" data from one or more data sources and return the requested data in a particular form or format",
+			"Cosmos DB": "Microsoft's globally distributed, multi-model database service supporting document, key-value, graph, and column-family data",
+			"EDW": "Enterprise Data Warehouse, a centralized repository for integrating and analyzing large volumes of organizational data",
+			"Star Schema": "A database design for analytics that organizes data into fact tables linked to dimension tables",
+			"Azure CLI": "A command-line tool for creating, managing, and querying Azure resources through scripts or direct commands",
+			"MySQL": "An open-source relational database system commonly used for structured data",
+			"Bingo Free Space 1": ""
+		};
+		gameC = {
+			"Consistency": "A data concept that describes how well or how quickly data is kept \"in sync\" with itself and with replicas of itself",
+			"Primary Key": "A data construct made up of one or more bits of data that uniquely identify an entity in a data store; examples include a key on a row in a table or a key on a JSON document",
+			"Non-Relational": "A data storage resource that stores semi-structured data or non-structured data",
+			"Eventual Consistency": "A database configuration that favors fast performance over ensuring data sources are in perfect sync at all times",
+			"SQL Server on a VM": "An IaaS relational database service offered in Azure",
+			"Partition Key": "A key in certain types of data resources that buckets multiple items, which could be rows or documents, under a particular category or common filter value",
+			"Big Data": "A term that has come to refer to massive amounts of data that is produced in large volumes, at high speed, with a lot of variety in terms of form or content",
+			"OLAP": "An acronym describing a type of data workload that is most appropriate for decision support and business intelligence",
+			"Analytical Workload": "Larger, richer datasets optimized for decision support and complex questions posed of the data",
+			"Cloud Shell": "A web-based command line terminal resource, accessible from the Azure portal ",
+			"OLTP": "An acronym describing a type of data workload that is most appropriate for operational data interactions",
+			"IaaS": "Acronym that describes the form of Azure service provided by SQL Server on a virtual machine",
+			"Azure Blob Storage": "An Azure data resource well suited for storing and serving up unstructured data in the form of images, videos, and PDFs",
+			"Azure Table Storage": "An Azure storage resource that employs the key-value type of semi-structured data",
+			"Azure Files": "Azure data resource that mimics on-premises file shares and allows applications and humans to interact with it the same way they do on servers and desktop computers",
+			"Unstructured": "Data that has no defined structure, often referred to as \"blobs,\" but may nonetheless include metadata associated with files, such as PDFs, images, and videos",
+			"Semi-Structured": "Data that is flexibly organized around entities that can have varying types and amounts of associated descriptive data and hierarchical data per defined entity",
+			"API": "Describes a means for other systems or humans to interact with a resource, such as a cloud database, using an \"interface\" that hides the complexity of the source system ",
+			"Transactional Workload": "Operational data that is processed in short, precise, isolated actions. Optimized for speed and accuracy within the interaction.",
+			"Document": "In a data sense, this describes a data container that stores human-readable, semi-structured data in the form of JSON, XML, YAML, and others",
+			"Row Key": "Key-value data resources can combine this with the partition key to form a primary key, which enables fast retrieval of individual entities in a table",
+			"NoSQL": "Often used interchangeably with the term \"non-relational\"",
+			"Key-Value": "Semi-structured format, where entities are organized into tables with rows uniquely identified by a key and a flexible number of columns; similar to wide-column data format",
+			"HTAP": "Hybrid Transactional and Analytical Processing, a data architecture that enables systems to run both fast transactional workloads and complex analytical queries over the same dataset",
+			"Bingo Free Space 1": ""
+		};
+		gameD = {
+			"ARM Templates": "\"Infrastructure as code,\" written in JSON to define and configure Azure resources",
+			"Azure CLI": "A command line language that can be used in a Bash shell to interact with Azure data resources",
+			"Partition Key": "A key in certain types of data resources that buckets multiple items, which could be rows or documents, under a particular category or common filter value",
+			"Attribute-Based Access Control": "A more granular form of access control that provides access rights based on user, environment, or resource attributes",
+			"VNet": "A network in Azure that mimics the form of on-premises, hardware-based networks",
+			"Bash": "A popular shell language that can run Azure CLI commands",
+			"TLS": "A protocol that protects data in motion, for example, traveling between the cloud services and customers",
+			"PowerShell": "A scripting language that has many uses — among them, interacting with Azure data resources",
+			"Firewall": "A security device, in the form of software or hardware, that filters traffic to resources, such as databases",
+			"Transparent Encryption": "A security feature that protects an entire database file (data at rest) so it cannot be read unless the host application is secured using the same key",
+			"Access": "A security-related concept that describes what entities can interact with which systems and what they can do during those interactions",
+			"Authentication": "A security-related process where a human user or a system is confirmed to be who they say they are",
+			"JSON": "A type of semi-structured data in human-readable form and stored on \"documents\"; similar in nature to XML and YAML",
+			"Cloud Shell": "A web-based command line terminal resource, accessible from the Azure portal ",
+			"IaaS": "Acronym that describes the form of Azure service provided by SQL Server on a virtual machine",
+			"Deploy": "After provisioning the storage account or underlying database infrastructure, a database administrator or a data engineer will ______ specific resources into that infrastructure.",
+			"RBAC": "An acronym describing a form of access control that depends on putting users in groups, or roles, and providing permissions to those groups, rather than individually to users",
+			"PaaS": "Most, but not all, Azure data services fall under the _____ service category, where Azure handles most of the administrative tasks of patching, backups, OS updates, and so on.",
+			"Transactional Workload": "Operational data that is processed in short, precise, isolated actions. Optimized for speed and accuracy within the interaction.",
+			"Provision": "The act of setting up the underlying infrastructure of a cloud data resource",
+			"Encryption": "The process of encoding data such that it can be interpreted by a system or human consumer only if they have a key that is passed between the source and the requester",
+			"Database Administrator": "This data professional will often be responsible for setting up database security and encyrption configurations as well as managing and monitoring IaaS infrastructure",
+			"Redundancy": "This term has 2 meanings in the data realm: 1) The existence of the same piece of data in more than one place, which is acceptable — even optimal in some systems — but not in others; and 2) A form of replication of cloud assets that improves accessibility and disaster recovery.",
+			"Private Link": "Use this service to bring certain PaaS services hosted on Azure into your private virtual network",
+			"Bingo Free Space 1": ""
+		};
+		gameE = {
+			"Azure SQL Managed Instance": "A cloud-based PaaS offering that is as compatible as possible with the full Microsoft SQL Server platform while still providing the benefits of a fully managed service",
+			"Consistency": "A data concept that describes how well or how quickly data is kept \"in sync\" with itself and with replicas of itself",
+			"Primary Key": "A data construct made up of one or more bits of data that uniquely identify an entity in a data store; examples include a key on a row in a table or a key on a JSON document",
+			"Index": "A data structure that copies and re-orders data or contains pointers to data to improve the speed of data retrieval operations, often at the cost of speed for write operations",
+			"Schema-on-Write": "A hallmark of structured, relational data, where the desired form of the data is determined ahead of time and enforced when the data is written to the data tables",
+			"Normalization": "A process of organizing data into tables and establishing relationships between those tables in a way designed both to protect the data and to make the database more flexible",
+			"ACID": "Acronym that describes a set of database properties that intend to guarantee data validity despite errors, power failures, concurrent use, and other risks to data integrity",
+			"OLTP": "An acronym describing a type of data workload that is most appropriate for operational data interactions",
+			"Azure Database for PostgreSQL": "An Azure PaaS offering that is based on the community edition of a relational database that offers many of the advanced features only otherwise found in Azure SQL Database",
+			"SQL Server on Virtual Machine": "An IaaS relational database service offered in Azure",
+			"Azure Database for MySQL": "Azure PaaS offering that is based on the community edition of a popular open-source database, with some of the advanced features of the Oracle enterprise edition",
+			"Azure SQL Database": "Azure's cornerstone PaaS relational data resource, available in multiple configurations from a single database to databases that approach full Microsoft SQL Server capabilities",
+			"Azure Data Studio": "Cross-platform database tool for data professionals using on-premises and cloud data platforms on Windows, macOS, and Linux",
+			"Concurrency": "Describes the operation and impact on data when more than one human or system is operating over the same data at the same time",
+			"SQL": "Many data sources can be queried by some variant of this declarative language.",
+			"PaaS": "Most, but not all, Azure data services fall under the _____ service category, where Azure handles most of the administrative tasks of patching, backups, OS updates, and so on.",
+			"Transactional Workload": "Operational data that is processed in short, precise, isolated actions. Optimized for speed and accuracy within the interaction.",
+			"Stored Procedures": "Prepared database code you can save so the code can be reused, often with improved performance over ad hoc code",
+			"Azure Database for MariaDB": "Relational database service in the Microsoft cloud that supports multiple tiers of the community edition, which was originally forked off of MySQL",
+			"Azure SQL Elastic Pools": "Solution for managing and scaling multiple Azure SQL databases that have varying and unpredictable usage demands by flexibly sharing set resources on a single server",
+			"3NF Data Model": "The most commonly applied data model form employed in relational databases optimized for transactional workloads",
+			"Redundancy": "This term has 2 meanings in the data realm: 1) The existence of the same piece of data in more than one place, which is acceptable — even optimal in some systems — but not in others; and 2) A form of replication of cloud assets that improves accessibility and disaster recovery.",
+			"SSMS": "Tool used to manage and query databases using both UI features and T-SQL code",
+			"Relational": "Type of database where structured data is organized into tables with rows and columns, where each row is an entity, with pre-defined columns that are the same for every row",
+			"Querying": "Writing code or interacting with a UI to \"read\" data from one or more data sources and return the requested data in a particular form or format"
+		};
+		gameF = {
+			"Consistency": "A data concept that describes how well or how quickly data is kept \"in sync\" with itself and with replicas of itself",
+			"Non-Relational": "A data storage resource that stores semi-structured data or non-structured data",
+			"Index": "A data structure that copies and re-orders data or contains pointers to data to improve the speed of data retrieval operations, often at the cost of speed for write operations",
+			"Eventual Consistency": "A database configuration that favors fast performance over ensuring data sources are in perfect sync at all times",
+			"Multi-Model": "A database that can support more than one data format",
+			"Schema-on-Read": "A hallmark of semi-structured data, where the desired form of the returned data is determined by the query",
+			"Partition Key": "A key in certain types of data resources that buckets multiple items, which could be rows or documents, under a particular category or common filter value",
+			"Gremlin": "A language used for querying/traversing across a graph data source",
+			"Firewall": "A security device, in the form of software or hardware, that filters traffic to resources, such as databases",
+			"Graph": "A type of database made up of nodes and edges, which is particularly well suited to social networking applications and certain scientific applications",
+			"JSON": "A type of semi-structured data in human-readable form and stored on \"documents\"; similar in nature to XML and YAML",
+			"Cassandra": "A wide-column database that is supported on Azure through a Cosmos DB API",
+			"Wide-Column": "Also known as column-family, this type of database stores tables with rows, where a different set of columns can be defined for each row",
+			"Azure Table Storage": "An Azure storage resource that employs the key-value type of semi-structured data",
+			"MongoDB": "BSON document database that is supported on Azure through a Cosmos DB API",
+			"Semi-Structured": "Data that is flexibly organized around entities that can have varying types and amounts of associated descriptive data and hierarchical data per defined entity",
+			"API": "Describes a means for other systems or humans to interact with a resource, such as a cloud database, using an \"interface\" that hides the complexity of the source system ",
+			"Concurrency": "Describes the operation and impact on data when more than one human or system is operating over the same data at the same time",
+			"Document": "In a data sense, this describes a data container that stores human-readable, semi-structured data in the form of JSON, XML, YAML, and others",
+			"Nodes and Edges": "In graph databases, entities and relationships are also referred to as these 2 terms.",
+			"PaaS": "Most, but not all, Azure data services fall under the _____ service category, where Azure handles most of the administrative tasks of patching, backups, OS updates, and so on.",
+			"Cosmos DB": "Multi-model database designed for global distribution and high performance",
+			"Key-Value": "Semi-structured format, where entities are organized into tables with rows uniquely identified by a key and a flexible number of columns; similar to wide-column data format",
+			"SQL/Core API": "The primary interface for interacting with Cosmos DB",
+			"Redundancy": "This term has 2 meanings in the data realm: 1) The existence of the same piece of data in more than one place, which is acceptable — even optimal in some systems — but not in others; and 2) A form of replication of cloud assets that improves accessibility and disaster recovery."
+		};
+		gameG = {
+			"Azure Data Lake Storage Gen2": "A form of Blob storage optimized for analytics support with a hierarchical folder structure and able to store both relational and non-relational data",
+			"U-SQL": "A language used for batch jobs over large amounts of data in Azure Data Lake Analytics",
+			"OLAP": "An acronym describing a type of data workload that is most appropriate for decision support and business intelligence",
+			"Azure Databricks": "Analytics service built on Apache Spark that supports data processing, machine learning, and analytics via code in notebooks using SQL, R, Python, and Scala",
+			"Azure Analytics Service": "Based on SQL Server Analytics, an analytics service that operates over tabular and dimensional data models",
+			"Streaming Workload": "Data is gathered and processed very near to the time it is generated, from micro-seconds to a few minutes, such that the data is delivered in a near continuious fashion.",
+			"Batch Workload": "Data is gathered from one or more sources at regular intervals, usually measured in hours or days, and processed all the same time",
+			"Data Factory": "Data processing service in Azure that provides a UI to orchestrate and data processing activities; Synapse Pipelines are built on the same platform as this resource",
+			"Star Data Model": "Denormalized analytics data model that centers on fact tables, with dimension tables directly related to the facts",
+			"PolyBase": "Feature in Synapse Analytics that allows direct loading of data in other forms and formats, such as blobs in parquet format, using T-SQL",
+			"Analytics Workload": "Larger, richer datasets optimized for decision support and complex questions posed of the data",
+			"Azure Synapse Analytics": "Modern data warehouse and analytics service based on SQL Data Warehouse that also includes Spark technologies and deep integration with other big data resources",
+			"ETL": "One of 2 major approaches to data processing that performs the transformation in memory or in a staging environment before the final load into the destination data store",
+			"ELT": "One of 2 major approaches to data processing that performs the transformation step within the final storage destination",
+			"Fact": "One of 2 primary table types in star and snowflake data models, this table type often represents events or activities of the data, such as invoices or medical claims",
+			"Dimension": "One of 2 primary table types in star and snowflake data models, this table type often represents people, places, objects, and time",
+			"Apache Spark": "Open-source analytics engine used for big data processing",
+			"Azure HDInsight": "Open-source big data processing service, similar in purpose to Azure Synapse Analytics",
+			"Pipeline": "Primary orchestration structure for Data Factory, which organizes activities over datasets into a logical workflow",
+			"Ingestion": "Process of pulling data into a data platform environment from multiple sources, via either batch processing or stream processing",
+			"Snowflake Data Model": "Semi-normalized analytics data model that centers on fact tables, with dimensions related to facts but also related to other dimensions",
+			"Transformation": "Step in both of the 2 major approaches to data processing, where data is converted into a form most appropriate for analytical processing and analysis",
+			"Extract": "Step in both of the 2 major approaches to data processing, where ingested data is selectively pulled into the process for transformation and final storage",
+			"Load": "Step in both of the 2 major approaches to data processing, whereby the data comes to rest in a particular data resource for consumption by other processes or humans ",
+			"Data Processing": "The act of gathering, cleansing, transforming, and storing data from multiple sources for use by other systems and processes or for further analysis and reporting"
+		};
+		gameH = {
+			"Dataset": "A collection of data from one or more sources used to generate visualizations that can be aggregated into reports",
+			"Dashboard": "A collection of visualizations in Power BI that are organized around a theme and allow for drill-down for further detail",
+			"Visualization": "A data technique that translates information into a visual context to make it easier to understand and gain insights",
+			"Microsoft Power BI Desktop": "A downloadable tool used to create interactive reports and visualizations",
+			"Workspace": "A place to collaborate in building Power BI assets in the Power BI service",
+			"Tile": "A resizable component on a Power BI dashboard; each one displays a visualization that can be as complex as a bubble chart or as simple as a single value",
+			"Power BI Report Builder": "A service evolved out of similar tooling for SQL Server Reporting Services and now used to build paginated reports in Power BI",
+			"Pie Chart": "A simple, relative-measure chart that is useful only for a small number of categories",
+			"Diagnostic": "Analytics technique that focuses on surfacing the reasons behind a particular event or scenario",
+			"Prescriptive": "Analytics technique that offers recommendations by asserting required actions to achieve a target metric or goal",
+			"Descriptive": "Analytics technique that presents historical and current data to help understand the state of a business or a system",
+			"Predictive": "Analytics technique that projects future events based on past trends or similar scenarios",
+			"Cognitive": "Analytics technique whose hallmark is the ability to make additional inferences based on analyzing one or more metrics",
+			"Bar Chart": "Chart that allows for analysis of differences across a set of categories",
+			"Line Chart": "Chart that allows for the measure of numeric data over 2 axes, with the X-axis often representing time",
+			"Scatter Chart": "Chart that presents the relationship between 2 metrics using dots on X and Y axes",
+			"Key Influencer": "Chart that surfaces the factors that affect a key metric",
+			"Data Analyst": "Exploring and analyzing data and building business-friendly data models falls under the responsibility of this data professional",
+			"Analytics Workload": "Larger, richer datasets optimized for decision support and complex questions posed of the data",
+			"Microsoft Power BI Service": "Online platform focused on building, publishing, and sharing dashboards",
+			"Microsoft Power BI Mobile": "Service designed for viewing shared Power BI dashboards and reports",
+			"Bubble Chart": "Similar to a scatter chart but with a third dimension represented by the size of the dots",
+			"Paginated Report": "Specialized Power BI report used to generate and share longer tabular data that can be formatted to fit well on a standard printed page",
+			"Tree Map": "Visualization that uses interlocking rectangles, with color coding, size, and position to express relative value and some simple hierarchies",
+			"Bingo Free Space 1": ""
+		};
+
+		
+	function generate(game) {
+		var usedTerms = [];
+		
+		var node = document.getElementById("grid");
+		var nodeDef = document.getElementById("definitions");
+		
+/* 		if(node.innerHTML && !confirm("Are you sure you want to regenerate the game?"))
+			return; */
+		//randomly fill the bingo card/grid
+		var html = '<h3>Buzzword Bingo Card</strong></h3><table border="0">';
+		for(var y = 0; y < 5; y++) {
+			html += "<tr>"
+			for(var x = 0; x < 5; x++) {
+				do {
+					var i = Math.round(Math.random() * 24);
+					var terms = Object.keys(game);
+					var term = terms[i];
+				} while(usedTerms.indexOf(term) >= 0);
+				usedTerms.push(term);
+				//show grid cell already selected if it is a free space
+				if (term.includes("Bingo Free Space"))
+				html += '<td id="key_' + term + '" Class="selectedOn">FREE SPACE!</td>';
+				else
+				html += '<td id="key_' + term + '" onclick="javascript:dabCard(\'key_' + term + '\',\'def_' + term + '\');">' + term + '</td>';
+
+			}
+			html += "</tr>"
+		}
+			html += "</table>";
+			//load the grid in the randomized order
+		node.innerHTML = html;
+
+		//load the list of definitions in the original order from the dictionary object (so will be different from random loop that filled the bingo grid)
+		var definitionsHTML = "</br><fieldset><legend>Definitions and Descriptions</legend></br>";
+			//for each key (term) in the dictionary of terms
+			for(var trm in game){
+    			//Return the value (definition) for the current key
+   				var definition = game[trm];
+				//only create a definition entry if the dictionary entry is not a free space
+				if (!trm.includes("Bingo Free Space"))
+					{definitionsHTML += '<input type="radio" name="definitions" id="def_' + trm + '" value="key_' + trm + '"><label for="def_' + trm + '">'+ definition + '</label></br></br>';
+					}
+			}
+			definitionsHTML += "</fieldset>";
+			nodeDef.innerHTML = definitionsHTML;
+
+
+		}
+
+		function toggle(id){
+		var elem = document.getElementById(id);
+		if (elem.style.display == "block")
+			elem.style.display = "none";
+		else
+			elem.style.display = "block";
+		}	
+
+		function dabCard(selectedKeyId,correctDefinitionId){
+		var node = document.getElementById(selectedKeyId);
+		var nodeDef = document.getElementById(correctDefinitionId);
+		 if (nodeDef.checked)
+			node.className="selectedOn";
+		}
+		
+	</script>
+</head>
+<body>
+  <a><img src="pslogo.png" alt="pluralsight.com" width="100"></a></br>
+  <h1>Azure Data Fundamentals Bingo</h1>
+
+  <p>Built to support content presented in the DP-900 Azure Data Fundamentals exam prep learning path</p>
+
+  <a href="javascript:toggle('instructions');">Show/Hide Instructions...</a>
+
+  <noscript>
+    <div class="noJavascript">
+      <strong>Oops!</strong>
+      <p><em>
+        You do not have JavaScript enabled. Please enable JavaScript to use this application.
+      </em></p>
+    </div>
+  </noscript>
+
+  <div id="instructions">
+    <ol>
+      <noscript><li>Enable JavaScript</li></noscript>
+      <li>Click the appropriate topic button, below, to generate your Bingo game; the position of each term on the Bingo card is randomly generated.</li>
+	  NOTE: many of the vocabulary terms are repeated across topics to aid in reinforcement.
+      <li>Select a description or definition from the list. Go through the list in any order that suits you.</li>
+      <li>Your prize? Confirmation and reinforcement of the knowledge gained. You're welcome!</li>
+    </ol>
+  </div>
+
+  <form>
+    <input type="button" value="Cloud and Data Essentials" onClick="generate(gameA);"/>
+    <input type="button" value="Azure Data Offerings" onClick="generate(gameB);"/>
+    <input type="button" value="Interacting with Data in Azure" onClick="generate(gameC);"/>
+  </form>
+
+  <div class="grid-container">
+    <div id="definitions"></div>
+    <div id="grid"></div>
+  </div>
+</body>
+</html>
