@@ -270,21 +270,20 @@
 			"Index": "A data structure that copies and re-orders data or contains pointers to data to improve the speed of data retrieval operations, often at the cost of speed for write operations",
 			"Schema-on-Write": "A hallmark of structured, relational data, where the desired form of the data is determined ahead of time and enforced when the data is written to the data tables",
 			"Normalization": "A process of organizing data into tables and establishing relationships between those tables in a way designed both to protect the data and to make the database more flexible",
-			"ACID": "Acronym that describes a set of database properties that intend to guarantee data validity despite errors, power failures, concurrent use, and other risks to data integrity",
-			"OLTP": "An acronym describing a type of data workload that is most appropriate for operational data interactions",
+			"View": "Aa virtual table that is defined by a query. Unlike physical tables, views do not store data themselves; they dynamically retrieve data from one or more underlying tables",
 			"Azure Database for PostgreSQL": "An Azure PaaS offering that is based on the community edition of a relational database that offers many of the advanced features only otherwise found in Azure SQL Database",
 			"SQL Server on Virtual Machine": "An IaaS relational database service offered in Azure",
 			"Azure Database for MySQL": "Azure PaaS offering that is based on the community edition of a popular open-source database, with some of the advanced features of the Oracle enterprise edition",
 			"Azure SQL Database": "Azure's cornerstone PaaS relational data resource, available in multiple configurations from a single database to databases that approach full Microsoft SQL Server capabilities",
-			"Azure Data Studio": "Cross-platform database tool for data professionals using on-premises and cloud data platforms on Windows, macOS, and Linux",
+			"Visual Studio Code": "An intetgrated development environment (IDE) that can be extended to serve as a means to interact directly with Azure relational databases",
 			"Concurrency": "Describes the operation and impact on data when more than one human or system is operating over the same data at the same time",
 			"SQL": "Many data sources can be queried by some variant of this declarative language.",
 			"PaaS": "Most, but not all, Azure data services fall under the _____ service category, where Azure handles most of the administrative tasks of patching, backups, OS updates, and so on.",
 			"Transactional Workload": "Operational data that is processed in short, precise, isolated actions. Optimized for speed and accuracy within the interaction.",
-			"Stored Procedures": "Prepared database code you can save so the code can be reused, often with improved performance over ad hoc code",
+			"T-SQL": "A specific variant of a querying language that is used for Microsoft relational databases, such as Microsoft SQL Server and Azure SQL Database",
 			"Azure Database for MariaDB": "Relational database service in the Microsoft cloud that supports multiple tiers of the community edition, which was originally forked off of MySQL",
 			"Azure SQL Elastic Pools": "Solution for managing and scaling multiple Azure SQL databases that have varying and unpredictable usage demands by flexibly sharing set resources on a single server",
-			"3NF Data Model": "The most commonly applied data model form employed in relational databases optimized for transactional workloads",
+			"IaaS": "Acronym that describes the form of Azure service provided by SQL Server on a virtual machine",
 			"Redundancy": "This term has 2 meanings in the data realm: 1) The existence of the same piece of data in more than one place, which is acceptable — even optimal in some systems — but not in others; and 2) A form of replication of cloud assets that improves accessibility and disaster recovery.",
 			"SSMS": "Tool used to manage and query databases using both UI features and T-SQL code",
 			"Relational": "Type of database where structured data is organized into tables with rows and columns, where each row is an entity, with pre-defined columns that are the same for every row",
@@ -470,6 +469,7 @@
     <input type="button" value="Cloud and Data Essentials" onClick="generate(gameA);"/>
     <input type="button" value="Azure Data Offerings" onClick="generate(gameB);"/>
     <input type="button" value="Interacting with Data in Azure" onClick="generate(gameC);"/>
+    <input type="button" value="Relational Data Considerations on Azure" onClick="generate(gameE);"/>
   </form>
 
   <div class="grid-container">
